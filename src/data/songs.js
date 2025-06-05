@@ -1,0 +1,51 @@
+export const songs = [
+  {
+    id: '1',
+    title: 'Ocean Drive',
+    artist: 'Duke Dumont',
+    duration: '3:26',
+    image: 'https://images.genius.com/626b44b5ee7569bb7581c96445cd0098.1000x1000x1.png',
+  },
+  {
+    id: '2',
+    title: 'The Less I Know the Better',
+    artist: 'Tame Impala',
+    duration: '3:36',
+    image: 'https://i.scdn.co/image/ab67616d0000b2739e1cfc756886ac782e363d79',
+  },
+  {
+    id: '3',
+    title: 'Be the One',
+    artist: 'Dua Lipa',
+    duration: '3:22',
+    image: 'https://i.scdn.co/image/ab67616d0000b273838698485511bd9108fadadc',
+  },
+  {
+    id: '4',
+    title: 'Breathing',
+    artist: 'Ben Böhmer',
+    duration: '5:42',
+    image: 'https://i.scdn.co/image/ab67616d0000b27363393476ef4f6c43a0a0be09',
+  },
+  {
+    id: '5',
+    title: 'Secrets',
+    artist: 'The Weeknd',
+    duration: '4:25',
+    image: 'https://i.scdn.co/image/ab67616d0000b273a048415db06a5b6fa7ec4e1a',
+  },
+  {
+    id: '6',
+    title: 'Lady (Hear Me Tonight)',
+    artist: 'Modjo',
+    duration: '3:40',
+    image: 'https://i.scdn.co/image/ab67616d0000b27354c5c304064df85d61253ac7',
+  },
+  {
+    id: '7',
+    title: 'Murder on the Dancefloor',
+    artist: 'Sophie Ellis-Bextor',
+    duration: '3:50',
+    image: 'https://i.scdn.co/image/ab67616d0000b273b811026c093edadc9d954f5c',
+  },
+];
