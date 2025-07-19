@@ -1,30 +1,24 @@
-import { useState } from 'react';
-import { songs as songList } from '../data/songs';
-import { SongCard } from '../components/SongCard';
-import { Container } from '../components/Container';
+import { Link } from 'react-router-dom';
+import { songs } from '../data/song';
 
-export const Home = () => {
-  const [search, setSearch] = useState('');
+export default function Home() {
 
-  const filteredSongs = songList.filter(song =>
-    song.title.toLowerCase().includes(search.toLowerCase())
-  );
+  const categories = [...new Set(songs.map(song => song.category))];
 
   return (
-    <Container>
-      <input
-        type="text"
-        placeholder="Buscar canciones..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        style={{ width: '100%', padding: '0.75rem', marginBottom: '1rem', fontSize: '1rem' }}
-      />
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
-        {filteredSongs.map(song => (
-          <SongCard key={song.id} song={song} />
+    <div style={{ padding: '1rem' }}>
+      <h1>Categorías</h1>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {categories.map(category => (
+          <li key={category} style={{ marginBottom: '1rem' }}>
+            <Link to={`/category/${category}`} style={{ fontSize: '1.2rem', color: '#1DB954', textDecoration: 'none' }}>
+              {category.charAt(0).toUpperCase() + category.slice(1)}
+            </Link>
+          </li>
         ))}
-      </div>
-    </Container>
+      </ul>
+    </div>
   );
-};
+}
+
 

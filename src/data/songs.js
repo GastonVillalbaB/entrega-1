@@ -5,6 +5,7 @@ export const songs = [
     artist: 'Duke Dumont',
     duration: '3:26',
     image: 'https://images.genius.com/626b44b5ee7569bb7581c96445cd0098.1000x1000x1.png',
+    category: 'electronic',
   },
   {
     id: '2',
@@ -12,6 +13,7 @@ export const songs = [
     artist: 'Tame Impala',
     duration: '3:36',
     image: 'https://i.scdn.co/image/ab67616d0000b2739e1cfc756886ac782e363d79',
+    category: 'rock',
   },
   {
     id: '3',
@@ -19,6 +21,7 @@ export const songs = [
     artist: 'Dua Lipa',
     duration: '3:22',
     image: 'https://i.scdn.co/image/ab67616d0000b273838698485511bd9108fadadc',
+    category: 'pop',
   },
   {
     id: '4',
@@ -26,6 +29,7 @@ export const songs = [
     artist: 'Ben Böhmer',
     duration: '5:42',
     image: 'https://i.scdn.co/image/ab67616d0000b27363393476ef4f6c43a0a0be09',
+    category: 'electronic',
   },
   {
     id: '5',
@@ -33,6 +37,7 @@ export const songs = [
     artist: 'The Weeknd',
     duration: '4:25',
     image: 'https://i.scdn.co/image/ab67616d0000b273a048415db06a5b6fa7ec4e1a',
+    category: 'pop',
   },
   {
     id: '6',
@@ -40,6 +45,7 @@ export const songs = [
     artist: 'Modjo',
     duration: '3:40',
     image: 'https://i.scdn.co/image/ab67616d0000b27354c5c304064df85d61253ac7',
+    category: 'electronic',
   },
   {
     id: '7',
@@ -47,5 +53,6 @@ export const songs = [
     artist: 'Sophie Ellis-Bextor',
     duration: '3:50',
     image: 'https://i.scdn.co/image/ab67616d0000b273b811026c093edadc9d954f5c',
+    category: 'pop',
   },
 ];
