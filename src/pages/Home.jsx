@@ -1,16 +1,42 @@
-import { songs } from '../data/songs';
-import { SongCard } from '../components/SongCard';
-import { Container } from '../components/Container';
+import { Link } from 'react-router-dom'
+import { useSongs } from '../hooks/useMusic.js'
+import SongList from '../components/SongList.jsx'
 
-export const Home = () => {
+export default function Home() {
+  const { data: songs } = useSongs()  // React Query hook
+
+  const categories = [...new Set(songs.map(song => song.category).filter(Boolean))]
+
   return (
-    <Container>
-      <h2 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>Lista de Canciones</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1rem' }}>
-        {songs.map(song => (
-          <SongCard key={song.id} song={song} />
+    <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif', backgroundColor: '#121212', minHeight: '100vh', color: '#fff' }}>
+      <h1 style={{ marginBottom: '1.5rem', fontWeight: 'bold' }}>Categorías</h1>
+      <ul style={{ listStyle: 'none', padding: 0, display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+        {categories.map(category => (
+          <li
+            key={category}
+            style={{ backgroundColor: '#1db954', borderRadius: '8px', padding: '1rem 1.5rem', minWidth: '120px', textAlign: 'center', boxShadow: '0 2px 8px rgba(0,0,0,0.5)', transition: 'background-color 0.3s' }}
+          >
+            <Link
+              to={`/category/${category}`}
+              style={{
+                color: '#fff',
+                textDecoration: 'none',
+                fontWeight: '600',
+                fontSize: '1.1rem',
+                display: 'block',
+              }}
+              onMouseOver={e => (e.currentTarget.style.color = '#000')}
+              onMouseOut={e => (e.currentTarget.style.color = '#fff')}
+            >
+              {category ? category.charAt(0).toUpperCase() + category.slice(1) : 'Sin categoría'}
+            </Link>
+          </li>
         ))}
-      </div>
-    </Container>
-  );
-};
+      </ul>
+
+      {/* Agregamos la lista completa de canciones debajo */}
+      <h2 style={{ marginTop: '2rem' }}>Todas las canciones</h2>
+      <SongList songs={songs} />
+    </div>
+  )
+}
