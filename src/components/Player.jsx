@@ -23,7 +23,7 @@ export default function Player() {
       }}
     >
       <div style={{ flex: 1 }}>
-        <strong>Ocean Drive</strong> - Duke Dumont
+        <strong>BillieJeans</strong> - Michael Jackson
       </div>
       <input
         type="range"

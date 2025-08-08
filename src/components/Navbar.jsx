@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import spotifyIcon from '../assets/spotify-icon.png';
+import { Link } from 'react-router-dom'
+import spotifyIcon from '../assets/spotify-icon.png'
 
 const navStyle = {
   background: '#000',
@@ -12,13 +12,14 @@ const navStyle = {
   margin: '0 auto',
   boxSizing: 'border-box',
   boxShadow: '0 2px 5px rgba(0,0,0,0.5)',
-};
+}
 
 const logoContainer = {
   display: 'flex',
   alignItems: 'center',
   gap: '0.5rem',
-};
+  marginRight: '2rem',
+}
 
 const navLinks = {
   listStyle: 'none',
@@ -26,7 +27,7 @@ const navLinks = {
   gap: '1.5rem',
   margin: 0,
   padding: 0,
-};
+}
 
 const linkStyle = {
   color: 'white',
@@ -35,7 +36,7 @@ const linkStyle = {
   fontSize: '1rem',
   transition: 'color 0.3s ease',
   cursor: 'pointer',
-};
+}
 
 export default function Navbar() {
   return (
@@ -46,17 +47,36 @@ export default function Navbar() {
       </div>
       <ul style={navLinks}>
         <li>
-          <Link to="/" style={linkStyle} onMouseOver={e => (e.target.style.color = '#1DB954')} onMouseOut={e => (e.target.style.color = 'white')}>
+          <Link
+            to="/"
+            style={linkStyle}
+            onMouseOver={e => (e.target.style.color = '#1DB954')}
+            onMouseOut={e => (e.target.style.color = 'white')}
+          >
             Inicio
           </Link>
         </li>
         <li>
-          <Link to="/favoritos" style={linkStyle} onMouseOver={e => (e.target.style.color = '#1DB954')} onMouseOut={e => (e.target.style.color = 'white')}>
+          <Link
+            to="/favoritos"
+            style={linkStyle}
+            onMouseOver={e => (e.target.style.color = '#1DB954')}
+            onMouseOut={e => (e.target.style.color = 'white')}
+          >
             Favoritos
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/create-song"
+            style={linkStyle}
+            onMouseOver={e => (e.target.style.color = '#1DB954')}
+            onMouseOut={e => (e.target.style.color = 'white')}
+          >
+            Crear Canción
           </Link>
         </li>
       </ul>
     </nav>
-  );
+  )
 }
-

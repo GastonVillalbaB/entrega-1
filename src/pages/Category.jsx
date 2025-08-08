@@ -1,10 +1,11 @@
-import { useParams, Link } from 'react-router-dom';
-import { songs } from '../data/songs';
+import { useParams, Link } from 'react-router-dom'
+import { useSongs } from '../hooks/useMusic.js'
 
 export default function Category() {
-  const { id } = useParams();
+  const { id } = useParams()
+  const { data: songs } = useSongs()
 
-  const filteredSongs = songs.filter(song => song.category === id);
+  const filteredSongs = songs.filter(song => song.category === id)
 
   return (
     <div style={{ padding: '2rem', fontFamily: 'Arial, sans-serif', backgroundColor: '#121212', minHeight: '100vh', color: '#fff' }}>
@@ -48,6 +49,5 @@ export default function Category() {
         </ul>
       )}
     </div>
-  );
+  )
 }
-
